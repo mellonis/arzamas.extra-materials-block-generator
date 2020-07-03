@@ -1,0 +1,32 @@
+:root {
+  --background-color: #FFFFFF;
+  --color:  #4C4C4C;
+  --lava-pro-font-famly: 'Lava Pro', serif;
+}
+
+* {
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: var(--background-color);
+  color: var(--color);
+  font-family: var(--lava-pro-font-famly);
+}
+
+a {
+  color: black;
+
+  &:hover {
+    opacity: .7;
+  }
+
+  &:visited {
+    opacity: .8;
+  }
+}
+
+@import "components/container";
+@import "components/article";
+@import "components/extra-materials";

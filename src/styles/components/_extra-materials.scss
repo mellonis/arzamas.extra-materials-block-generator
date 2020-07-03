@@ -1,0 +1,95 @@
+.extra-materials {
+  $selector: &;
+
+  --block-base-font-family: Formular, sans-serif;
+  --block-background-color: #F7F7F7;
+  --block-padding-horizontal: 30px;
+  --block-padding-vertical: 26px;
+  --block-border-radius: 8px;
+  --block-header-font-size: 11px;
+  --block-header-line-height: 15px;
+  --block-title-font-size: 19px;
+  --block-title-line-height: 23px;
+  --block-description-font-size: 17px;
+  --block-description-line-height: 26px;
+  --block-source-domain-background-color: #E6E6E6;
+  --block-source-domain-border-radius: 4px;
+  --block-source-domain-font-size: 11px;
+  --block-source-domain-line-height: 15px;
+
+
+
+  background-color: var(--block-background-color);
+  border-radius: var(--block-border-radius);
+  font-family: var(--block-base-font-family);
+  padding: var(--block-padding-vertical) var(--block-padding-horizontal);
+
+  &__header {
+    font-size: var(--block-header-font-size);
+    font-weight: bold;
+    line-height: var(--block-header-line-height);
+    padding-bottom: 16px;
+    text-transform: uppercase;
+  }
+
+  &__list {
+    list-style: none;
+    padding: 0;
+  }
+
+  &__item {
+    padding: 12px 0 22px; // todo: (rgilmullin) clarify padding
+    position: relative;
+
+    &:first-of-type {
+      padding-top: 0;
+    }
+
+    &:last-of-type {
+      padding-bottom: 0;
+    }
+
+    &:not(:last-of-type) {
+      &:after {
+        background-color: #000;
+        content: ' ';
+        display: block;
+        height: 1px;
+        opacity: .1;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+      }
+    }
+  }
+
+  &__title {
+    font-size: var(--block-title-font-size);
+    font-weight: bold;
+    line-height: var(--block-title-line-height);
+    padding-bottom: 4px;
+  }
+
+  &__description {
+    font-family: var(--lava-pro-font-famly);
+    font-size: var(--block-description-font-size);
+    line-height: var(--block-description-line-height);
+    padding-bottom: 4px;
+  }
+
+  &__source-domain {
+    background-color: var(--block-source-domain-background-color);
+    border-radius: var(--block-source-domain-border-radius);
+    display: inline-block;
+    font-size: var(--block-source-domain-font-size);
+    line-height: var(--block-source-domain-line-height);
+    padding: 5px;
+  }
+
+  &_editing {
+    #{$selector}__controls {
+      display: flex;
+    }
+  }
+}

@@ -1,0 +1,21 @@
+.article {
+  --article-font-size: 17px;
+  --article-line-height: 26px;
+  --article-font-family: Lava Pro;
+
+  color: var(--color);
+  font-size: var(--article-font-size);
+  line-height: var(--article-line-height);
+  margin: 0;
+  padding: 50px 0;
+
+  p {
+    &:not(:first-of-type) {
+      padding: 30px 0;
+    }
+
+    & + p {
+      padding-top: 0;
+    }
+  }
+}
