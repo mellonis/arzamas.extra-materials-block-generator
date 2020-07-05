@@ -1,0 +1,17 @@
+.button {
+  background-color: var(--button-background-color);
+  border: var(--button-border);
+  border-radius: var(--button-border-radius);
+  font-family: var(--extra-materials-base-font-family);
+  font-size: 13px;
+  line-height: 15px;
+  margin: 0 var(--button-margin);
+  padding: var(--button-padding) calc(var(--button-padding) * 2);
+  outline-color: var(--button-outline-color);
+  user-select: none;
+
+  &:hover {
+    background-color: var(--button-background-color_hover);
+    box-shadow: rgba(0,0,0,.2) 0 5px 5px;
+  }
+}

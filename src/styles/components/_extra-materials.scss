@@ -1,35 +1,39 @@
 .extra-materials {
   $selector: &;
 
-  --block-base-font-family: Formular, sans-serif;
-  --block-background-color: #F7F7F7;
-  --block-padding-horizontal: 30px;
-  --block-padding-vertical: 26px;
-  --block-border-radius: 8px;
-  --block-header-font-size: 11px;
-  --block-header-line-height: 15px;
-  --block-title-font-size: 19px;
-  --block-title-line-height: 23px;
-  --block-description-font-size: 17px;
-  --block-description-line-height: 26px;
-  --block-source-domain-background-color: #E6E6E6;
-  --block-source-domain-border-radius: 4px;
-  --block-source-domain-font-size: 11px;
-  --block-source-domain-line-height: 15px;
+  background-color: var(--extra-materials-background-color);
+  border-radius: var(--extra-materials-border-radius);
+  font-family: var(--extra-materials-base-font-family);
+  padding: var(--extra-materials-padding-vertical) var(--extra-materials-padding-horizontal);
 
-
-
-  background-color: var(--block-background-color);
-  border-radius: var(--block-border-radius);
-  font-family: var(--block-base-font-family);
-  padding: var(--block-padding-vertical) var(--block-padding-horizontal);
+  &__error {
+    color: red;
+  }
 
   &__header {
-    font-size: var(--block-header-font-size);
+    font-size: var(--extra-materials-header-font-size);
     font-weight: bold;
-    line-height: var(--block-header-line-height);
+    line-height: var(--extra-materials-header-line-height);
     padding-bottom: 16px;
     text-transform: uppercase;
+  }
+
+  @mixin constructor-mode_input() {
+    background-color: transparent;
+    border: none;
+    color: var(--color);
+    outline: none;
+    padding: 0;
+    width: 100%;
+
+    &:hover {
+      background-color: rgba(0, 0, 0, 0.1);
+    }
+  }
+
+  &__header-input {
+    @extend #{$selector}__header;
+    @include constructor-mode_input;
   }
 
   &__list {
@@ -48,48 +52,87 @@
     &:last-of-type {
       padding-bottom: 0;
     }
+  }
 
-    &:not(:last-of-type) {
-      &:after {
-        background-color: #000;
-        content: ' ';
-        display: block;
-        height: 1px;
-        opacity: .1;
-        position: absolute;
-        bottom: 0;
-        left: 0;
-        right: 0;
-      }
+  &__divider {
+    background-color: #000;
+    height: 1px;
+    opacity: .1;
+  }
+
+  &__url-input {
+    background-color: transparent;
+    border: none;
+    color: var(--color);
+    outline: none;
+    padding: 8px 0;
+    width: 100%;
+
+    &:hover {
+      background-color: rgba(0, 0, 0, 0.1);
     }
   }
 
   &__title {
-    font-size: var(--block-title-font-size);
+    font-size: var(--extra-materials-title-font-size);
     font-weight: bold;
-    line-height: var(--block-title-line-height);
+    line-height: var(--extra-materials-title-line-height);
     padding-bottom: 4px;
+
+    &_empty {
+      color: red;
+    }
+  }
+
+  &__title-input {
+    @extend #{$selector}__title;
+    @include constructor-mode_input;
   }
 
   &__description {
     font-family: var(--lava-pro-font-famly);
-    font-size: var(--block-description-font-size);
-    line-height: var(--block-description-line-height);
+    font-size: var(--extra-materials-description-font-size);
+    line-height: var(--extra-materials-description-line-height);
     padding-bottom: 4px;
   }
 
+  &__description-input {
+    @extend #{$selector}__description;
+    @include constructor-mode_input;
+  }
+
   &__source-domain {
-    background-color: var(--block-source-domain-background-color);
-    border-radius: var(--block-source-domain-border-radius);
+    background-color: var(--extra-materials-source-domain-background-color);
+    border-radius: var(--extra-materials-source-domain-border-radius);
     display: inline-block;
-    font-size: var(--block-source-domain-font-size);
-    line-height: var(--block-source-domain-line-height);
+    font-size: var(--extra-materials-source-domain-font-size);
+    line-height: var(--extra-materials-source-domain-line-height);
     padding: 5px;
   }
 
-  &_editing {
+  &_constructor {
+    #{$selector}__list {
+      padding-bottom: var(--extra-materials-padding-vertical);
+    }
     #{$selector}__controls {
       display: flex;
+      justify-content: space-around;
+      padding-top: var(--extra-materials-padding-vertical);
+    }
+    #{$selector}__item-controls {
+      display: flex;
+      justify-content: space-around;
+      padding: calc(var(--extra-materials-padding-vertical) / 2) 0 var(--extra-materials-padding-vertical);
+
+      .button {
+        background-color: rgba(0, 0, 0, .05);
+      }
+    }
+  }
+
+  &:not(&_constructor) {
+    #{$selector}__item:hover {
+      opacity: .7;
     }
   }
 }

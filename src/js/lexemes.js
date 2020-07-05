@@ -1,0 +1,20 @@
+export default {
+  ru: {
+    addMaterial: 'Добавить материал',
+    removeMaterial: 'Удалить материал',
+    renderPreview: 'Посмотреть результат',
+    blockTitle: 'Заголовок вреза',
+    url: 'Адрес материала',
+    title: 'Заголовок материала',
+    description: 'Описание материала',
+    constructor: 'Конструктор',
+    preview: 'Результат',
+    emptyUrlError: 'Необходимо указать ссылку!',
+    emptyTitleError: 'Необходимо указать заголовок!',
+    fetchUrlTitle: 'Получить заголовок',
+    fetchUrlDescription: 'Получить подзаголовок',
+    copyResultHtml: 'Скопировать HTML',
+    htmlWasCopiedToTheClipboard: 'HTML скопирован',
+    testTextarea: 'Поле для проверки результата',
+  },
+};

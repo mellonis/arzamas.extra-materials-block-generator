@@ -1,0 +1,37 @@
+:root {
+  --background-color: #ffffff;
+  --color:  #4c4c4c;
+  --lava-pro-font-famly: 'Lava Pro', serif;
+  --formular-font-family: 'Formular', sans-serif;
+
+  --article-font-family: Lava Pro;
+  --article-font-size: 17px;
+  --article-line-height: 26px;
+  --article-padding: 30px;
+  --article-paragraph-padding: 30px;
+
+  --extra-materials-base-font-family: var(--formular-font-family);
+  --extra-materials-background-color: #F7F7F7;
+  --extra-materials-padding-horizontal: 30px;
+  --extra-materials-padding-vertical: 26px;
+  --extra-materials-border-radius: 8px;
+  --extra-materials-header-font-size: 11px;
+  --extra-materials-header-line-height: 15px;
+  --extra-materials-title-font-size: 19px;
+  --extra-materials-title-line-height: 23px;
+  --extra-materials-description-font-size: 17px;
+  --extra-materials-description-line-height: 26px;
+  --extra-materials-source-domain-background-color: #E6E6E6;
+  --extra-materials-source-domain-border-radius: 4px;
+  --extra-materials-source-domain-font-size: 11px;
+  --extra-materials-source-domain-line-height: 15px;
+
+  --button-background-color: #ffffff;
+  --botton-background-color_hover: #f7f7f7;
+  --button-border: 1px solid var(--button-border-color);
+  --button-border-color: rgba(0, 0, 0, .1);
+  --button-border-radius: 2px;
+  --button-margin: 1px;
+  --button-padding: 8px;
+  --button-outline-color: var(--button-border-color);
+}

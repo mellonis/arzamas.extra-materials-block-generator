@@ -1,8 +1,5 @@
-:root {
-  --background-color: #FFFFFF;
-  --color:  #4C4C4C;
-  --lava-pro-font-famly: 'Lava Pro', serif;
-}
+@use 'themes/main.theme';
+@use 'components/components';
 
 * {
   margin: 0;
@@ -27,6 +24,8 @@ a {
   }
 }
 
-@import "components/container";
-@import "components/article";
-@import "components/extra-materials";
+[data-action] {
+  &:not([disabled]) {
+    cursor: pointer;
+  }
+}
