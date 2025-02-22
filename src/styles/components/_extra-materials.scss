@@ -54,6 +54,12 @@
     }
   }
 
+  &__link {
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+  }
+
   &__divider {
     background-color: #000;
     height: 1px;

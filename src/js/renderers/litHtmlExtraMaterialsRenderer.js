@@ -101,10 +101,12 @@ ${
 }
       <li 
         class="extra-materials__item"
-        data-action="${ifDefined(mode === ExtraMaterials.MODE.DEFAULT || mode === ExtraMaterials.MODE.PREVIEW ? 'follow-link' : undefined)}" 
-        data-href="${ifDefined(mode === ExtraMaterials.MODE.DEFAULT || mode === ExtraMaterials.MODE.PREVIEW2 ? extraMaterial.url : undefined)}"
+        data-action="${ifDefined(mode === ExtraMaterials.MODE.PREVIEW ? 'follow-link' : undefined)}" 
+        data-href="${ifDefined(mode === ExtraMaterials.MODE.PREVIEW ? extraMaterial.url : undefined)}"
         data-ix="${ifDefined(mode === ExtraMaterials.MODE.CONSTRUCTOR ? ix : undefined)}"
       >
+        ${ifDefined(mode === ExtraMaterials.MODE.DEFAULT ? html`<a class="extra-materials__link" href="${extraMaterial.url}" target="_blank"/>` : nothing)}
+          
         ${itemUrlTemplate({ lexemes, extraMaterial, mode })}
         ${itemTitleTemplate({ lexemes, extraMaterial, mode })}
         ${itemDescriptionTemplate({ lexemes, extraMaterial, mode })}
@@ -188,7 +190,7 @@ export default {
     div.innerHTML = '';
     div.appendChild(resultDiv);
 
-    return div.innerHTML.replace(/<!---->/g, '');
+    return div.innerHTML.replace(/<!--.*?-->/g, '');
   },
   render: ({
     lexemes,
